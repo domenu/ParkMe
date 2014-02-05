@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkMe.iOS", "ParkMe.iOS\ParkMe.iOS.csproj", "{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Debug|iPhone.Build.0 = Debug|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Release|iPhone.ActiveCfg = Release|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Release|iPhone.Build.0 = Release|iPhone
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{2467BCBE-47EA-4292-AA82-C8FC0A9EDCBF}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ParkMe.iOS\ParkMe.iOS.csproj
+	EndGlobalSection
+EndGlobal
