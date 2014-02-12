@@ -2,13 +2,15 @@ using System;
 using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Collections.Generic;
 
 namespace ParkMe.iOS
 {
-	public partial class ParkMe_iOSViewController : UIViewController
+	public partial class RootViewController : UITableViewController
 	{
-		public ParkMe_iOSViewController () : base ("ParkMe_iOSViewController", null)
+		public RootViewController () : base ("RootViewController", null)
 		{
+			Title = "ParkMe";
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -24,6 +26,12 @@ namespace ParkMe.iOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+			var parkingList = new List<Parking> {
+				new Parking { Naam = "Kouter" }, 
+				new Parking { Naam = "Sint-Michiels"}
+			};
+			var parkingDataSource = new ParkingDataSource (this, parkingList);
+			TableView.Source = parkingDataSource;		
 		}
 	}
 }

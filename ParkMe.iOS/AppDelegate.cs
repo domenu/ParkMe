@@ -14,7 +14,7 @@ namespace ParkMe.iOS
 	{
 		// class-level declarations
 		UIWindow window;
-		ParkMe_iOSViewController viewController;
+		UINavigationController navigationController;
 		//
 		// This method is invoked when the application has loaded and is ready to run. In this
 		// method you should instantiate the window, load the UI into it and then make the window
@@ -25,9 +25,10 @@ namespace ParkMe.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			
-			viewController = new ParkMe_iOSViewController ();
-			window.RootViewController = viewController;
+
+			var rootViewController = new RootViewController ();
+			navigationController = new UINavigationController (rootViewController);
+			window.RootViewController = navigationController;
 			window.MakeKeyAndVisible ();
 			
 			return true;

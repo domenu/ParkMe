@@ -90,6 +90,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\..\ParkingGent\ParkingGent\RestSharp.MonoTouch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -101,13 +104,20 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ParkMe_iOSViewController.cs" />
     <Compile Include="ParkMe_iOSViewController.designer.cs">
-      <DependentUpon>ParkMe_iOSViewController.cs</DependentUpon>
+      <DependentUpon>RootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RootViewController.cs" />
+    <Compile Include="Parking.cs" />
+    <Compile Include="ParkingDataSource.cs" />
+    <Compile Include="ParkingDetailViewController.cs" />
+    <Compile Include="ParkingDetailViewController.designer.cs">
+      <DependentUpon>ParkingDetailViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="ParkMe_iOSViewController.xib" />
+    <InterfaceDefinition Include="RootViewController.xib" />
+    <InterfaceDefinition Include="ParkingDetailViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
