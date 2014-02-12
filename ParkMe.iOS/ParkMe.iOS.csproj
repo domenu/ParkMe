@@ -108,12 +108,12 @@
       <DependentUpon>RootViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="RootViewController.cs" />
-    <Compile Include="Parking.cs" />
     <Compile Include="ParkingDataSource.cs" />
     <Compile Include="ParkingDetailViewController.cs" />
     <Compile Include="ParkingDetailViewController.designer.cs">
       <DependentUpon>ParkingDetailViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarParkEntities.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="RootViewController.xib" />

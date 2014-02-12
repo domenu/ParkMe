@@ -7,14 +7,14 @@ namespace ParkMe.iOS
 {
 	public partial class ParkingDetailViewController : UIViewController
 	{
-		private Parking _parking;
+		private CarPark _parking;
 
 		public ParkingDetailViewController () : base ("ParkingDetailViewController", null)
 		{
 			Title = "Parking info";
 		}
 
-		public void SetParkingInfo(Parking parking)
+		public void SetParkingInfo(CarPark parking)
 		{
 			if (parking != _parking) {
 				_parking = parking;
@@ -26,7 +26,7 @@ namespace ParkMe.iOS
 		private void RefreshView()
 		{
 			if (_parking != null) {
-				Title = _parking.Naam;
+				Title = _parking.Name;
 			}
 		}
 

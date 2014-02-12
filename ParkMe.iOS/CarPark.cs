@@ -2,13 +2,13 @@ using System;
 
 namespace ParkMe.iOS
 {
-	public class Parking
+	public class CarPark
 	{
-		public Parking ()
+		public CarPark ()
 		{
 		}
 
-		public string Naam {
+		public string Name {
 			get;
 			set;
 		}
