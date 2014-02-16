@@ -3,6 +3,7 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.MapKit;
+using MonoTouch.CoreLocation;
 
 namespace ParkMe.iOS
 {
@@ -30,8 +31,13 @@ namespace ParkMe.iOS
 				labelStraatNummer.Text = _parking.AddressLine1;
 				labelPostcodeGemeente.Text = _parking.PCO + " " + _parking.Location;
 
-				var coords = new MonoTouch.CoreLocation.CLLocationCoordinate2D (double.Parse (_parking.Latitude), double.Parse (_parking.Longitude));
-				var span = new MKCoordinateSpan(KilometresToLatitudeDegrees(1), KilometresToLongitudeDegrees(1, coords.Latitude));
+				var latitude = double.Parse (_parking.Latitude);
+				var longitude = double.Parse (_parking.Longitude);
+
+				var annotation = new MapAnnotation (new CLLocationCoordinate2D(latitude, longitude), _parking.Name, _parking.AddressLine1);
+				mapView.AddAnnotation(annotation);
+				var coords = new MonoTouch.CoreLocation.CLLocationCoordinate2D (latitude, longitude);
+				var span = new MKCoordinateSpan(KilometresToLatitudeDegrees(0.2), KilometresToLongitudeDegrees(0.2, coords.Latitude));
 				mapView.Region = new MKCoordinateRegion(coords, span);
 
 				labelCapacteit.Text = _parking.Capacity;

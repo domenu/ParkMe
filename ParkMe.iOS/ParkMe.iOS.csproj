@@ -115,6 +115,7 @@
       <DependentUpon>ParkingDetailViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="CarParkEntities.cs" />
+    <Compile Include="MapAnnotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="RootViewController.xib" />

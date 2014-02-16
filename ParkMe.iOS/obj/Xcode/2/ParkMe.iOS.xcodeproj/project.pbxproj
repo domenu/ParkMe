@@ -1,0 +1,234 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23B7869A0000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274893380000000000000000 /* UIKit.framework */; };
+		54D29CD00000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE366B00000000000000000 /* MapKit.framework */; };
+		1A8092650000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E119F030000000000000000 /* Foundation.framework */; };
+		DEB74AE00000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117C814C0000000000000000 /* CoreGraphics.framework */; };
+		1E1816C80000000000000000 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A923660000000000000000 /* Default-568h@2x.png */; };
+		334B7F600000000000000000 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36DC8BFE0000000000000000 /* RootViewController.xib */; };
+		2176404A0000000000000000 /* ParkingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25074CE80000000000000000 /* ParkingDetailViewController.xib */; };
+		26B661A90000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 2A476E470000000000000000 /* AppDelegate.h */; };
+		2832934E0000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC39FEC0000000000000000 /* AppDelegate.m */; };
+		10EA4FBD0000000000000000 /* RootViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 147B5C5B0000000000000000 /* RootViewController.h */; };
+		7E63EA400000000000000000 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B774B4200000000000000000 /* RootViewController.m */; };
+		60446C700000000000000000 /* ParkingDetailViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 995536500000000000000000 /* ParkingDetailViewController.h */; };
+		2EBC03360000000000000000 /* ParkingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 324D0FD40000000000000000 /* ParkingDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1E5F695A0000000000000000 /* ParkMe.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "ParkMe.iOS.app"; path = "ParkMe.iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		274893380000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		8DE366B00000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		1E119F030000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		117C814C0000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		21A923660000000000000000 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		36DC8BFE0000000000000000 /* RootViewController.xib */ = {isa = PBXFileReference; name = "RootViewController.xib"; path = "RootViewController.xib"; sourceTree = "<group>"; };
+		25074CE80000000000000000 /* ParkingDetailViewController.xib */ = {isa = PBXFileReference; name = "ParkingDetailViewController.xib"; path = "ParkingDetailViewController.xib"; sourceTree = "<group>"; };
+		2A476E470000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		2BC39FEC0000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		147B5C5B0000000000000000 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RootViewController.h"; path = "RootViewController.h"; sourceTree = "<group>"; };
+		B774B4200000000000000000 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "RootViewController.m"; path = "RootViewController.m"; sourceTree = "<group>"; };
+		995536500000000000000000 /* ParkingDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ParkingDetailViewController.h"; path = "ParkingDetailViewController.h"; sourceTree = "<group>"; };
+		324D0FD40000000000000000 /* ParkingDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ParkingDetailViewController.m"; path = "ParkingDetailViewController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CD67EEE0000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23B7869A0000000000000000 /* UIKit.framework in Frameworks */,
+				54D29CD00000000000000000 /* MapKit.framework in Frameworks */,
+				1A8092650000000000000000 /* Foundation.framework in Frameworks */,
+				DEB74AE00000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEFF07C00000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				3789A4C80000000000000000 /* ParkMe.iOS */,
+				17A316560000000000000000 /* Frameworks */,
+				23CCAA200000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23CCAA200000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E5F695A0000000000000000 /* ParkMe.iOS.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		17A316560000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				274893380000000000000000 /* UIKit.framework */,
+				8DE366B00000000000000000 /* MapKit.framework */,
+				1E119F030000000000000000 /* Foundation.framework */,
+				117C814C0000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		3789A4C80000000000000000 /* ParkMe.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2A476E470000000000000000 /* AppDelegate.h */,
+				21A923660000000000000000 /* Default-568h@2x.png */,
+				995536500000000000000000 /* ParkingDetailViewController.h */,
+				25074CE80000000000000000 /* ParkingDetailViewController.xib */,
+				147B5C5B0000000000000000 /* RootViewController.h */,
+				36DC8BFE0000000000000000 /* RootViewController.xib */,
+				34C7B1050000000000000000 /* Supporting Files */,
+			);
+			name = "ParkMe.iOS";
+			sourceTree = "<group>";
+		};
+		34C7B1050000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2BC39FEC0000000000000000 /* AppDelegate.m */,
+				324D0FD40000000000000000 /* ParkingDetailViewController.m */,
+				B774B4200000000000000000 /* RootViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16A4A6CA0000000000000000 /* ParkMe.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13AC43800000000000000000 /* Build configuration list for PBXNativeTarget "ParkMe.iOS" */;
+			buildPhases = (
+				1B013FD80000000000000000 /* Sources */,
+				2CD67EEE0000000000000000 /* Frameworks */,
+				3EBDF6300000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ParkMe.iOS";
+			productName = "ParkMe.iOS";
+			productReference = 1E5F695A0000000000000000 /* ParkMe.iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF180F000000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 8F91DA600000000000000000 /* Build configuration list for PBXProject "ParkMe.iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEFF07C00000000000000000;
+			productRefGroup = 23CCAA200000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16A4A6CA0000000000000000 /* ParkMe.iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EBDF6300000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E1816C80000000000000000 /* Default-568h@2x.png in Resources */,
+				334B7F600000000000000000 /* RootViewController.xib in Resources */,
+				2176404A0000000000000000 /* ParkingDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B013FD80000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26B661A90000000000000000 /* AppDelegate.h in Sources */,
+				2832934E0000000000000000 /* AppDelegate.m in Sources */,
+				10EA4FBD0000000000000000 /* RootViewController.h in Sources */,
+				7E63EA400000000000000000 /* RootViewController.m in Sources */,
+				60446C700000000000000000 /* ParkingDetailViewController.h in Sources */,
+				2EBC03360000000000000000 /* ParkingDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A754F4B00000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		3E45F7CC0000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "ParkMe.iOS";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F91DA600000000000000000 /* Build configuration list for PBXProject "ParkMe.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A754F4B00000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		13AC43800000000000000000 /* Build configuration list for PBXNativeTarget "ParkMe.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E45F7CC0000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF180F000000000000000000 /* Project object */;
+}
