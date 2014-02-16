@@ -93,6 +93,7 @@
     <Reference Include="RestSharp.MonoTouch">
       <HintPath>..\..\ParkingGent\ParkingGent\RestSharp.MonoTouch.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
