@@ -13,6 +13,9 @@ namespace ParkMe.iOS
 	partial class ParkingDetailViewController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton buttonDialNumber { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel labelCapacteit { get; set; }
 
 		[Outlet]
@@ -35,14 +38,19 @@ namespace ParkMe.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (labelCapacteit != null) {
+				labelCapacteit.Dispose ();
+				labelCapacteit = null;
+			}
+
+			if (labelExtraInfo != null) {
+				labelExtraInfo.Dispose ();
+				labelExtraInfo = null;
+			}
+
 			if (labelNaam != null) {
 				labelNaam.Dispose ();
 				labelNaam = null;
-			}
-
-			if (labelStraatNummer != null) {
-				labelStraatNummer.Dispose ();
-				labelStraatNummer = null;
 			}
 
 			if (labelPostcodeGemeente != null) {
@@ -50,14 +58,9 @@ namespace ParkMe.iOS
 				labelPostcodeGemeente = null;
 			}
 
-			if (mapView != null) {
-				mapView.Dispose ();
-				mapView = null;
-			}
-
-			if (labelCapacteit != null) {
-				labelCapacteit.Dispose ();
-				labelCapacteit = null;
+			if (labelStraatNummer != null) {
+				labelStraatNummer.Dispose ();
+				labelStraatNummer = null;
 			}
 
 			if (labelTelefoon != null) {
@@ -65,9 +68,14 @@ namespace ParkMe.iOS
 				labelTelefoon = null;
 			}
 
-			if (labelExtraInfo != null) {
-				labelExtraInfo.Dispose ();
-				labelExtraInfo = null;
+			if (mapView != null) {
+				mapView.Dispose ();
+				mapView = null;
+			}
+
+			if (buttonDialNumber != null) {
+				buttonDialNumber.Dispose ();
+				buttonDialNumber = null;
 			}
 		}
 	}

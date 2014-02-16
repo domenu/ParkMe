@@ -9,6 +9,7 @@
 
 @implementation ParkingDetailViewController
 
+@synthesize buttonDialNumber = _buttonDialNumber;
 @synthesize labelCapacteit = _labelCapacteit;
 @synthesize labelExtraInfo = _labelExtraInfo;
 @synthesize labelNaam = _labelNaam;

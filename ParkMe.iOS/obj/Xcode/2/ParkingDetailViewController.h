@@ -10,6 +10,7 @@
 
 
 @interface ParkingDetailViewController : UIViewController {
+	UIButton *_buttonDialNumber;
 	UILabel *_labelCapacteit;
 	UILabel *_labelExtraInfo;
 	UILabel *_labelNaam;
@@ -18,6 +19,8 @@
 	UILabel *_labelTelefoon;
 	MKMapView *_mapView;
 }
+
+@property (nonatomic, retain) IBOutlet UIButton *buttonDialNumber;
 
 @property (nonatomic, retain) IBOutlet UILabel *labelCapacteit;
 

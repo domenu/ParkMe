@@ -13,7 +13,6 @@ namespace ParkMe.iOS
 
 		public ParkingDetailViewController () : base ("ParkingDetailViewController", null)
 		{
-			Title = "Parking info";
 		}
 
 		public void SetParkingInfo(CarPark parking)
@@ -41,7 +40,7 @@ namespace ParkMe.iOS
 				mapView.Region = new MKCoordinateRegion(coords, span);
 
 				labelCapacteit.Text = _parking.Capacity;
-				labelTelefoon.Text = _parking.Phone;
+				buttonDialNumber.SetTitle (_parking.Phone, UIControlState.Normal);
 				labelExtraInfo.Text = _parking.FreeText;
 			}
 		}
@@ -73,13 +72,23 @@ namespace ParkMe.iOS
 			// Release any cached data, images, etc that aren't in use.
 		}
 
+		private void DialCarPark(object sender, EventArgs e)
+		{
+			// URL encode phone number
+			var regex = new System.Text.RegularExpressions.Regex (@"[^\d]");
+			var phoneNumber = regex.Replace (_parking.Phone, "");
+
+			var encodedPhoneNumber = Uri.EscapeDataString(phoneNumber);
+			var phoneUrl = NSUrl.FromString(string.Format(@"tel://{0}", encodedPhoneNumber));
+			UIApplication.SharedApplication.OpenUrl(phoneUrl);
+		}
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
 			RefreshView ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
+			buttonDialNumber.TouchUpInside += DialCarPark;
 		}
 	}
 }
