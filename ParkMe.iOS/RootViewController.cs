@@ -1,13 +1,13 @@
 using System;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.Collections.Generic;
-using RestSharp;
+using System.Drawing;
+using System.Linq;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
-using System.Linq;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using MonoTouch.CoreLocation;
 
 namespace ParkMe.iOS
 {
@@ -29,26 +29,33 @@ namespace ParkMe.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			var carParkManager = new CarParkManager ();
+			var carParks = carParkManager.GetCarParks ();
 
-			var document = XDocument.Load ("http://datatank.gent.be/Infrastructuur/Parkeergarages.xml");
-			var carParks = (from carPark in document.Descendants ("CarPark")
-			                select new CarPark { 
-				Name = carPark.Element ("Name").Value,
-				AddressLine1 = carPark.Element ("AddressLine1").Value,
-				Location = carPark.Element ("Location").Value,
-				PCO = carPark.Element ("PCO").Value,
-				Phone = carPark.Element ("Phone").Value,
-				DefaultLanguage = carPark.Element ("DefaultLanguage").Value,
-				Latitude = carPark.Element ("Latitude").Value,
-				Longitude = carPark.Element ("Longitude").Value,
-				Capacity = carPark.Element ("Capacity").Value,
-				Floors = carPark.Element ("Floors").Value,
-				parkingType = carPark.Element ("parkingType").Value,
-				FreeText = carPark.Element ("FreeText").Value
-				}).OrderBy(carPark => carPark.Name).ToList ();
+			foreach(var carPark in carParks)
+			{
+				double latitude = double.Parse(carPark.Latitude);
+				double longitude = double.Parse(carPark.Longitude);
+				carPark.DistanceFromCurrentLocation = new CLLocation(50.975684, 3.724051).DistanceFrom(new CLLocation(latitude, longitude)) / 1000;
+				// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
+			}
+
+			var locationManager = new LocationManager ();
+			locationManager.LocationUpdated += (sender, e) => {
+				foreach(var carPark in carParks)
+				{
+					double latitude = double.Parse(carPark.Latitude);
+					double longitude = double.Parse(carPark.Longitude);
+					carPark.DistanceFromCurrentLocation = new CLLocation(3.724051, 50.975684).DistanceFrom(new CLLocation(latitude, longitude));
+						// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
+				}
+				InvokeOnMainThread (() => TableView.ReloadData ());
+			};
 
 			var parkingDataSource = new ParkingDataSource (this, carParks);
-			TableView.Source = parkingDataSource;		
+			TableView.Source = parkingDataSource;
+
+			locationManager.StartLocationUpdates ();
 		}
 	}
 }

@@ -90,9 +90,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="RestSharp.MonoTouch">
-      <HintPath>..\..\ParkingGent\ParkingGent\RestSharp.MonoTouch.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
@@ -114,12 +111,19 @@
     <Compile Include="ParkingDetailViewController.designer.cs">
       <DependentUpon>ParkingDetailViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarParkEntities.cs" />
     <Compile Include="MapAnnotation.cs" />
+    <Compile Include="Managers\CarParkManager.cs" />
+    <Compile Include="Managers\LocationManager.cs" />
+    <Compile Include="BusinessObjects\LocationUpdatedEventArgs.cs" />
+    <Compile Include="BusinessObjects\CarParkEntities.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="RootViewController.xib" />
     <InterfaceDefinition Include="ParkingDetailViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Managers\" />
+    <Folder Include="BusinessObjects\" />
+  </ItemGroup>
 </Project>

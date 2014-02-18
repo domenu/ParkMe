@@ -36,6 +36,7 @@ namespace ParkMe.iOS
 
 			// configure the cell
 			cell.TextLabel.Text = _parkingList [indexPath.Row].Name;
+			cell.DetailTextLabel.Text = _parkingList [indexPath.Row].DistanceFromCurrentLocation.ToString();
 			// cell.DetailTextLabel.Text = matchList[indexPath.Row].Score;
 			//cell.ImageView.Image = UIImage.FromFile(matchList[indexPath.Row].Icon);
 			return cell;

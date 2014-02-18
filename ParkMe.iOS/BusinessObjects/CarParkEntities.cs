@@ -17,6 +17,8 @@ namespace ParkMe.iOS
 		public string Floors { get; set; }
 		public string parkingType { get; set; }
 		public string FreeText { get; set; }
+
+		public double DistanceFromCurrentLocation { get; set;}
 	}
 
 	public class Carparks
