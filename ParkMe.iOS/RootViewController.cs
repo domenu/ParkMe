@@ -15,7 +15,7 @@ namespace ParkMe.iOS
 	{
 		public RootViewController () : base ("RootViewController", null)
 		{
-			Title = "ParkMe";
+			Title = "Parkeergarages in Gent";
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -45,20 +45,8 @@ namespace ParkMe.iOS
 				Floors = carPark.Element ("Floors").Value,
 				parkingType = carPark.Element ("parkingType").Value,
 				FreeText = carPark.Element ("FreeText").Value
-			}).ToList ();
+				}).OrderBy(carPark => carPark.Name).ToList ();
 
-			/*
-			var client = new RestClient ("http://datatank.gent.be/");
-			var parkingRequest = new RestRequest ("Infrastructuur/Parkeergarages.json", Method.GET);
-			var parkingResponse = client.Execute<RootObject> (parkingRequest);
-*/
-			// Perform any additional setup after loading the view, typically from a nib.
-			/*
-			var parkingList = new List<CarPark> {
-				new CarPark { Name = "Kouter" }, 
-				new CarPark { Name = "Sint-Michiels" }
-			};
-			*/
 			var parkingDataSource = new ParkingDataSource (this, carParks);
 			TableView.Source = parkingDataSource;		
 		}

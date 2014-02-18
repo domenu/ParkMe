@@ -44,7 +44,7 @@ namespace ParkMe.iOS
 		public override void RowSelected (UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			var parkingDetailViewController = new ParkingDetailViewController ();
-			parkingDetailViewController.SetParkingInfo (_parkingList [indexPath.Row]);
+			parkingDetailViewController.SetCarPark (_parkingList [indexPath.Row]);
 			_controller.NavigationController.PushViewController (parkingDetailViewController, true);
 		}
 

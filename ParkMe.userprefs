@@ -1,20 +1,20 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.0" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ParkMe.iOS/ParkingDetailViewController.cs">
     <Files>
       <File FileName="ParkMe.iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="ParkMe.iOS/RootViewController.cs" Line="14" Column="21" />
-      <File FileName="ParkMe.iOS/Main.cs" Line="1" Column="1" />
-      <File FileName="ParkMe.iOS/CarPark.cs" Line="13" Column="8" />
-      <File FileName="ParkMe.iOS/ParkingDataSource.cs" Line="1" Column="1" />
-      <File FileName="ParkMe.iOS/ParkingDetailViewController.cs" Line="1" Column="1" />
-      <File FileName="ParkMe.iOS/CarParkEntities.cs" Line="6" Column="15" />
+      <File FileName="ParkMe.iOS/RootViewController.cs" Line="49" Column="4" />
+      <File FileName="ParkMe.iOS/Main.cs" Line="16" Column="1" />
+      <File FileName="ParkMe.iOS/CarPark.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/ParkingDataSource.cs" Line="46" Column="1" />
+      <File FileName="ParkMe.iOS/ParkingDetailViewController.cs" Line="83" Column="1" />
+      <File FileName="ParkMe.iOS/CarParkEntities.cs" Line="19" Column="10" />
+      <File FileName="ParkMe.iOS/ParkingDetailViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/MapAnnotation.cs" Line="9" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/dominiquemenu/code/ParkMe/ParkMe.iOS/RootViewController.cs" line="34" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
