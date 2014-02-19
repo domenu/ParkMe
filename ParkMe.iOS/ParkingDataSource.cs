@@ -7,9 +7,9 @@ namespace ParkMe.iOS
 	public class ParkingDataSource : UITableViewSource
 	{
 		private RootViewController _controller;
-		private IList<CarPark> _parkingList;
+		private IList<Parking> _parkingList;
 
-		public ParkingDataSource (RootViewController controller, IList<CarPark> parkingList)
+		public ParkingDataSource (RootViewController controller, IList<Parking> parkingList)
 		{
 			_controller = controller;
 			_parkingList = parkingList;
@@ -35,8 +35,8 @@ namespace ParkMe.iOS
 			}
 
 			// configure the cell
-			cell.TextLabel.Text = _parkingList [indexPath.Row].Name;
-			cell.DetailTextLabel.Text = _parkingList [indexPath.Row].DistanceFromCurrentLocation.ToString();
+			cell.TextLabel.Text = _parkingList [indexPath.Row].Description;
+			cell.DetailTextLabel.Text = string.Format ("{0} beschikbaar", _parkingList [indexPath.Row].AvailableCapacity);
 			// cell.DetailTextLabel.Text = matchList[indexPath.Row].Score;
 			//cell.ImageView.Image = UIImage.FromFile(matchList[indexPath.Row].Icon);
 			return cell;

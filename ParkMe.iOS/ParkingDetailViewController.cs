@@ -9,57 +9,43 @@ namespace ParkMe.iOS
 {
 	public partial class ParkingDetailViewController : UIViewController
 	{
-		private CarPark _carPark;
+		private Parking _parking;
 
 		public ParkingDetailViewController () : base ("ParkingDetailViewController", null)
 		{
 		}
 
-		public void SetCarPark(CarPark carPark)
+		public void SetCarPark(Parking parking)
 		{
-			if (carPark != _carPark) {
-				_carPark = carPark;
+			if (parking != _parking) {
+				_parking = parking;
 			}
 		}
 
 		private void RefreshView()
 		{
-			if (_carPark == null)
+			if (_parking == null)
 				return;
 
-			Title = _carPark.Name;
-			labelStraatNummer.Text = _carPark.AddressLine1;
-			labelPostcodeGemeente.Text = _carPark.PCO + " " + _carPark.Location;
-			labelCapacteit.Text = _carPark.Capacity;
-			buttonDialNumber.SetTitle (_carPark.Phone, UIControlState.Normal);
-			labelExtraInfo.Text = _carPark.FreeText;
+			Title = _parking.Description;
+			labelAdres.Text = _parking.Address;
+			labelCapacteit.Text = _parking.TotalCapacity.ToString();
+			labelTelefoon.Text = _parking.ContactInfo;
+			labelExtraInfo.Text = _parking.Description;
 
 			ShowCarParkOnMap ();
 		}
 
 		void ShowCarParkOnMap ()
 		{
-			var latitude = double.Parse (_carPark.Latitude);
-			var longitude = double.Parse (_carPark.Longitude);
-
-			var annotation = new MapAnnotation (new CLLocationCoordinate2D (latitude, longitude), _carPark.Name, _carPark.AddressLine1);
+			var annotation = new MapAnnotation (new CLLocationCoordinate2D (_parking.Latitude, _parking.Longitude), _parking.Description, _parking.Address);
 			mapView.AddAnnotation (annotation);
 
-			var coords = new MonoTouch.CoreLocation.CLLocationCoordinate2D (latitude, longitude);
-			var span = new MKCoordinateSpan (KilometresToLatitudeDegrees (0.2), KilometresToLongitudeDegrees (0.2, coords.Latitude));
+			var coords = new MonoTouch.CoreLocation.CLLocationCoordinate2D (_parking.Latitude, _parking.Longitude);
+			var span = new MKCoordinateSpan (KilometresToLatitudeDegrees (0.5), KilometresToLongitudeDegrees (0.5, coords.Latitude));
 			mapView.Region = new MKCoordinateRegion (coords, span);
 		}
 
-		private void DialCarPark(object sender, EventArgs e)
-		{
-			// URL encode phone number
-			var regex = new System.Text.RegularExpressions.Regex (@"[^\d]");
-			var phoneNumber = regex.Replace (_carPark.Phone, "");
-
-			var encodedPhoneNumber = Uri.EscapeDataString(phoneNumber);
-			var phoneUrl = NSUrl.FromString(string.Format(@"tel://{0}", encodedPhoneNumber));
-			UIApplication.SharedApplication.OpenUrl(phoneUrl);
-		}
 
 		/// <summary>Converts kilometres to latitude degrees</summary>
 		public double KilometresToLatitudeDegrees(double kms)
@@ -93,7 +79,6 @@ namespace ParkMe.iOS
 			base.ViewDidLoad ();
 
 			RefreshView ();
-			buttonDialNumber.TouchUpInside += DialCarPark;
 		}
 	}
 }

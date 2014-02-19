@@ -29,33 +29,34 @@ namespace ParkMe.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			var carParkManager = new CarParkManager ();
-			var carParks = carParkManager.GetCarParks ();
+			var parkingManager = new ParkingManager ();
+			var parkings = parkingManager.GetParkings ();
 
-			foreach(var carPark in carParks)
-			{
-				double latitude = double.Parse(carPark.Latitude);
-				double longitude = double.Parse(carPark.Longitude);
-				carPark.DistanceFromCurrentLocation = new CLLocation(50.975684, 3.724051).DistanceFrom(new CLLocation(latitude, longitude)) / 1000;
-				// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
-			}
+//			var parkings =  carParkManager.GetParkings ();
+//			foreach(var carPark in carParks)
+//			{
+//				double latitude = double.Parse(carPark.Latitude);
+//				double longitude = double.Parse(carPark.Longitude);
+//				carPark.DistanceFromCurrentLocation = new CLLocation(50.975684, 3.724051).DistanceFrom(new CLLocation(latitude, longitude)) / 1000;
+//				// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
+//			}
+//
+//			var locationManager = new LocationManager ();
+//			locationManager.LocationUpdated += (sender, e) => {
+//				foreach(var carPark in carParks)
+//				{
+//					double latitude = double.Parse(carPark.Latitude);
+//					double longitude = double.Parse(carPark.Longitude);
+//					carPark.DistanceFromCurrentLocation = e.Location.DistanceFrom(new CLLocation(latitude, longitude));
+//						// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
+//				}
+//				InvokeOnMainThread (() => TableView.ReloadData ());
+//			};
 
-			var locationManager = new LocationManager ();
-			locationManager.LocationUpdated += (sender, e) => {
-				foreach(var carPark in carParks)
-				{
-					double latitude = double.Parse(carPark.Latitude);
-					double longitude = double.Parse(carPark.Longitude);
-					carPark.DistanceFromCurrentLocation = new CLLocation(3.724051, 50.975684).DistanceFrom(new CLLocation(latitude, longitude));
-						// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
-				}
-				InvokeOnMainThread (() => TableView.ReloadData ());
-			};
-
-			var parkingDataSource = new ParkingDataSource (this, carParks);
+			var parkingDataSource = new ParkingDataSource (this, parkings);
 			TableView.Source = parkingDataSource;
 
-			locationManager.StartLocationUpdates ();
+			//locationManager.StartLocationUpdates ();
 		}
 	}
 }

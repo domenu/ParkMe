@@ -13,22 +13,19 @@ namespace ParkMe.iOS
 	partial class ParkingDetailViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton buttonDialNumber { get; set; }
+		MonoTouch.UIKit.UILabel labelAdres { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel labelAvailableCapacity { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel labelAvailableCapcity { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel labelCapacteit { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel labelExtraInfo { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UILabel labelNaam { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UILabel labelPostcodeGemeente { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UILabel labelStraatNummer { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel labelTelefoon { get; set; }
@@ -38,6 +35,21 @@ namespace ParkMe.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (labelAvailableCapacity != null) {
+				labelAvailableCapacity.Dispose ();
+				labelAvailableCapacity = null;
+			}
+
+			if (labelAdres != null) {
+				labelAdres.Dispose ();
+				labelAdres = null;
+			}
+
+			if (labelAvailableCapcity != null) {
+				labelAvailableCapcity.Dispose ();
+				labelAvailableCapcity = null;
+			}
+
 			if (labelCapacteit != null) {
 				labelCapacteit.Dispose ();
 				labelCapacteit = null;
@@ -48,21 +60,6 @@ namespace ParkMe.iOS
 				labelExtraInfo = null;
 			}
 
-			if (labelNaam != null) {
-				labelNaam.Dispose ();
-				labelNaam = null;
-			}
-
-			if (labelPostcodeGemeente != null) {
-				labelPostcodeGemeente.Dispose ();
-				labelPostcodeGemeente = null;
-			}
-
-			if (labelStraatNummer != null) {
-				labelStraatNummer.Dispose ();
-				labelStraatNummer = null;
-			}
-
 			if (labelTelefoon != null) {
 				labelTelefoon.Dispose ();
 				labelTelefoon = null;
@@ -71,11 +68,6 @@ namespace ParkMe.iOS
 			if (mapView != null) {
 				mapView.Dispose ();
 				mapView = null;
-			}
-
-			if (buttonDialNumber != null) {
-				buttonDialNumber.Dispose ();
-				buttonDialNumber = null;
 			}
 		}
 	}

@@ -91,6 +91,12 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\Components\restsharp-104.1.0\lib\ios\RestSharp.MonoTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Components\json.net-4.5.11\lib\ios\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -112,10 +118,10 @@
       <DependentUpon>ParkingDetailViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="MapAnnotation.cs" />
-    <Compile Include="Managers\CarParkManager.cs" />
     <Compile Include="Managers\LocationManager.cs" />
     <Compile Include="BusinessObjects\LocationUpdatedEventArgs.cs" />
-    <Compile Include="BusinessObjects\CarParkEntities.cs" />
+    <Compile Include="BusinessObjects\Parking.cs" />
+    <Compile Include="Managers\ParkingManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="RootViewController.xib" />
@@ -125,5 +131,17 @@
   <ItemGroup>
     <Folder Include="Managers\" />
     <Folder Include="BusinessObjects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="restsharp">
+      <InstallationInProgress>True</InstallationInProgress>
+      <Version>104.1.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="json.net">
+      <InstallationInProgress>True</InstallationInProgress>
+      <Version>4.5.11</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
