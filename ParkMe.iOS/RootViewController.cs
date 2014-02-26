@@ -18,7 +18,7 @@ namespace ParkMe.iOS
 
 		public RootViewController () : base ("RootViewController", null)
 		{
-			Title = "Parkeergarages in Gent";
+			Title = "Parkings";
 		}
 
 		public override void DidReceiveMemoryWarning ()

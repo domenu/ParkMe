@@ -13,61 +13,77 @@ namespace ParkMe.iOS
 	partial class ParkingDetailViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UILabel labelAdres { get; set; }
+		MonoTouch.UIKit.UIButton buttonNavigeren { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel labelAvailableCapacity { get; set; }
+		MonoTouch.UIKit.UILabel labelAfstand { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel labelAvailableCapcity { get; set; }
+		MonoTouch.UIKit.UILabel labelBeschikbareCapaciteit { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel labelCapacteit { get; set; }
+		MonoTouch.UIKit.UILabel labelContact { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel labelExtraInfo { get; set; }
+		MonoTouch.UIKit.UILabel labelIsOpen { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UILabel labelTelefoon { get; set; }
+		MonoTouch.UIKit.UILabel labelPostcodeGemeente { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel labelStraatNummer { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel labelTotaleCapaciteit { get; set; }
 
 		[Outlet]
 		MonoTouch.MapKit.MKMapView mapView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (labelAvailableCapacity != null) {
-				labelAvailableCapacity.Dispose ();
-				labelAvailableCapacity = null;
-			}
-
-			if (labelAdres != null) {
-				labelAdres.Dispose ();
-				labelAdres = null;
-			}
-
-			if (labelAvailableCapcity != null) {
-				labelAvailableCapcity.Dispose ();
-				labelAvailableCapcity = null;
-			}
-
-			if (labelCapacteit != null) {
-				labelCapacteit.Dispose ();
-				labelCapacteit = null;
-			}
-
-			if (labelExtraInfo != null) {
-				labelExtraInfo.Dispose ();
-				labelExtraInfo = null;
-			}
-
-			if (labelTelefoon != null) {
-				labelTelefoon.Dispose ();
-				labelTelefoon = null;
-			}
-
 			if (mapView != null) {
 				mapView.Dispose ();
 				mapView = null;
+			}
+
+			if (labelAfstand != null) {
+				labelAfstand.Dispose ();
+				labelAfstand = null;
+			}
+
+			if (labelBeschikbareCapaciteit != null) {
+				labelBeschikbareCapaciteit.Dispose ();
+				labelBeschikbareCapaciteit = null;
+			}
+
+			if (labelIsOpen != null) {
+				labelIsOpen.Dispose ();
+				labelIsOpen = null;
+			}
+
+			if (labelStraatNummer != null) {
+				labelStraatNummer.Dispose ();
+				labelStraatNummer = null;
+			}
+
+			if (labelPostcodeGemeente != null) {
+				labelPostcodeGemeente.Dispose ();
+				labelPostcodeGemeente = null;
+			}
+
+			if (labelContact != null) {
+				labelContact.Dispose ();
+				labelContact = null;
+			}
+
+			if (labelTotaleCapaciteit != null) {
+				labelTotaleCapaciteit.Dispose ();
+				labelTotaleCapaciteit = null;
+			}
+
+			if (buttonNavigeren != null) {
+				buttonNavigeren.Dispose ();
+				buttonNavigeren = null;
 			}
 		}
 	}

@@ -4,6 +4,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.MapKit;
 using MonoTouch.CoreLocation;
+using MonoTouch.CoreGraphics;
 
 namespace ParkMe.iOS
 {
@@ -13,6 +14,7 @@ namespace ParkMe.iOS
 
 		public ParkingDetailViewController () : base ("ParkingDetailViewController", null)
 		{
+
 		}
 
 		public void SetCarPark(Parking parking)
@@ -27,11 +29,17 @@ namespace ParkMe.iOS
 			if (_parking == null)
 				return;
 
+			var adresParts = _parking.Address.Split(new string[] {"<br>"}, StringSplitOptions.RemoveEmptyEntries);
+
 			Title = _parking.Description;
-			labelAdres.Text = _parking.Address;
-			labelCapacteit.Text = _parking.TotalCapacity.ToString();
-			labelTelefoon.Text = _parking.ContactInfo;
-			labelExtraInfo.Text = _parking.Description;
+			labelBeschikbareCapaciteit.Text = _parking.AvailableCapacity;
+			//labelBeschikbareCapaciteit.BackgroundColor = new UIColor		// TODO
+			labelAfstand.Text = "10";										// TODO
+			labelIsOpen.Text = _parking.IsOpen ? "Ja" : "Neen";
+			labelStraatNummer.Text = adresParts [0];
+			labelPostcodeGemeente.Text = adresParts [1];
+			labelContact.Text = _parking.ContactInfo;
+			labelTotaleCapaciteit.Text = _parking.TotalCapacity.ToString();
 
 			ShowCarParkOnMap ();
 		}
