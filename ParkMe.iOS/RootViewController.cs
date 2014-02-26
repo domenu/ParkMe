@@ -8,11 +8,14 @@ using System.Xml.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreLocation;
+using System.Threading.Tasks;
 
 namespace ParkMe.iOS
 {
 	public partial class RootViewController : UITableViewController
 	{
+		private LoadingOverlay _loadingOverlay;
+
 		public RootViewController () : base ("RootViewController", null)
 		{
 			Title = "Parkeergarages in Gent";
@@ -29,8 +32,6 @@ namespace ParkMe.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			var parkingManager = new ParkingManager ();
-			var parkings = parkingManager.GetParkings ();
 
 //			var parkings =  carParkManager.GetParkings ();
 //			foreach(var carPark in carParks)
@@ -53,10 +54,30 @@ namespace ParkMe.iOS
 //				InvokeOnMainThread (() => TableView.ReloadData ());
 //			};
 
+			//var parkingDataSource = new ParkingDataSource (this, parkings);
+			//TableView.Source = parkingDataSource;
+
+			//locationManager.StartLocationUpdates ();
+		}
+
+		public async override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+
+			_loadingOverlay = new LoadingOverlay (UIScreen.MainScreen.Bounds, "Parkeerinfo ophalen...");
+			View.Add (_loadingOverlay);
+
+			var parkings = new List<Parking> ();
+			await Task.Factory.StartNew (() => {
+				var parkingManager = new ParkingManager ();
+				parkings = parkingManager.GetParkings ();
+			});
+
 			var parkingDataSource = new ParkingDataSource (this, parkings);
 			TableView.Source = parkingDataSource;
 
-			//locationManager.StartLocationUpdates ();
+			_loadingOverlay.Hide ();
+
 		}
 	}
 }

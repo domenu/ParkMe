@@ -19,7 +19,7 @@ namespace ParkMe.iOS
 			var jObject = JObject.Parse (response.Content);
 			var token = jObject ["Parkings11"] ["parkings"];
 			var parkings = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Parking>> (token.ToString ());
-			return parkings;
+			return parkings.OrderBy(p => p.Description).ToList();
 		}
 	}
 }
