@@ -124,6 +124,7 @@
     <Compile Include="Managers\ParkingManager.cs" />
     <Compile Include="LoadingOverlay.cs" />
     <Compile Include="Extensions\UIColorExtensions.cs" />
+    <Compile Include="BusinessObjects\ParkingPartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="RootViewController.xib" />

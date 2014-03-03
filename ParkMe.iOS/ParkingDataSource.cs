@@ -34,9 +34,10 @@ namespace ParkMe.iOS
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			}
 
+			var parking = _parkingList [indexPath.Row];
 			// configure the cell
-			cell.TextLabel.Text = _parkingList [indexPath.Row].Description;
-			cell.DetailTextLabel.Text = string.Format ("{0} beschikbaar", _parkingList [indexPath.Row].AvailableCapacity);
+			cell.TextLabel.Text = parking.Description;
+			cell.DetailTextLabel.Text = string.Format ("{0} beschikbaar - {1} km", parking.AvailableCapacity, Math.Round(parking.DistanceFromCurrentLocation, 1));
 			// cell.DetailTextLabel.Text = matchList[indexPath.Row].Score;
 			//cell.ImageView.Image = UIImage.FromFile(matchList[indexPath.Row].Icon);
 			return cell;
@@ -47,6 +48,13 @@ namespace ParkMe.iOS
 			var parkingDetailViewController = new ParkingDetailViewController ();
 			parkingDetailViewController.SetCarPark (_parkingList [indexPath.Row]);
 			_controller.NavigationController.PushViewController (parkingDetailViewController, true);
+		}
+
+		public IList<Parking> ParkingList
+		{
+			get{
+				return _parkingList;
+			}
 		}
 
 	}

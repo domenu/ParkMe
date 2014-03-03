@@ -31,7 +31,7 @@ namespace ParkMe.iOS
 
 			if (CLLocationManager.LocationServicesEnabled) {
 
-				LocMgr.DesiredAccuracy = 1; // sets the accuracy that we want in meters
+				LocMgr.DesiredAccuracy = 10; // sets the accuracy that we want in meters
 
 				// Location updates are handled differently pre-iOS 6. If we want to support older versions of iOS,
 				// we want to do perform this check and let our LocationManager know how to handle location updates.

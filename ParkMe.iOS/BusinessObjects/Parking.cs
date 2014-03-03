@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace ParkMe.iOS
 {
-	public class Parking
+	public partial class Parking
 	{
 		[JsonProperty(PropertyName = "timestamp")]
 		public object Timestamp { get; set; }

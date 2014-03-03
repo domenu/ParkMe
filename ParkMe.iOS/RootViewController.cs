@@ -15,6 +15,7 @@ namespace ParkMe.iOS
 	public partial class RootViewController : UITableViewController
 	{
 		private LoadingOverlay _loadingOverlay;
+		private ParkingDataSource _parkingDataSource;
 
 		public RootViewController () : base ("RootViewController", null)
 		{
@@ -29,40 +30,9 @@ namespace ParkMe.iOS
 			// Release any cached data, images, etc that aren't in use.
 		}
 
-		public override void ViewDidLoad ()
+		public async override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
-//			var parkings =  carParkManager.GetParkings ();
-//			foreach(var carPark in carParks)
-//			{
-//				double latitude = double.Parse(carPark.Latitude);
-//				double longitude = double.Parse(carPark.Longitude);
-//				carPark.DistanceFromCurrentLocation = new CLLocation(50.975684, 3.724051).DistanceFrom(new CLLocation(latitude, longitude)) / 1000;
-//				// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
-//			}
-//
-//			var locationManager = new LocationManager ();
-//			locationManager.LocationUpdated += (sender, e) => {
-//				foreach(var carPark in carParks)
-//				{
-//					double latitude = double.Parse(carPark.Latitude);
-//					double longitude = double.Parse(carPark.Longitude);
-//					carPark.DistanceFromCurrentLocation = e.Location.DistanceFrom(new CLLocation(latitude, longitude));
-//						// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
-//				}
-//				InvokeOnMainThread (() => TableView.ReloadData ());
-//			};
-
-			//var parkingDataSource = new ParkingDataSource (this, parkings);
-			//TableView.Source = parkingDataSource;
-
-			//locationManager.StartLocationUpdates ();
-		}
-
-		public async override void ViewDidAppear (bool animated)
-		{
-			base.ViewDidAppear (animated);
 
 			_loadingOverlay = new LoadingOverlay (UIScreen.MainScreen.Bounds, "Parkeerinfo ophalen...");
 			View.Add (_loadingOverlay);
@@ -73,11 +43,24 @@ namespace ParkMe.iOS
 				parkings = parkingManager.GetParkings ();
 			});
 
-			var parkingDataSource = new ParkingDataSource (this, parkings);
-			TableView.Source = parkingDataSource;
+			_parkingDataSource = new ParkingDataSource (this, parkings);
+			TableView.Source = _parkingDataSource;
 
 			_loadingOverlay.Hide ();
+			StartLocationUpdates ();	
+		}
 
+		private void StartLocationUpdates ()
+		{
+			var locationManager = new LocationManager ();
+			locationManager.LocationUpdated += (sender, e) => {
+				foreach (var parking in _parkingDataSource.ParkingList) {
+					parking.DistanceFromCurrentLocation = e.Location.DistanceFrom (new CLLocation (parking.Latitude, parking.Longitude)) / 1000;
+					// e.Location.DistanceFrom(new MonoTouch.CoreLocation.CLLocation(latitude, longitude)) / 1000;
+				}
+				InvokeOnMainThread (() => TableView.Source = _parkingDataSource);
+			};
+			locationManager.StartLocationUpdates ();
 		}
 	}
 }
