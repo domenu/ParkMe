@@ -5,6 +5,7 @@ using MonoTouch.UIKit;
 using MonoTouch.MapKit;
 using MonoTouch.CoreLocation;
 using MonoTouch.CoreGraphics;
+using System.Text.RegularExpressions;
 
 namespace ParkMe.iOS
 {
@@ -38,7 +39,9 @@ namespace ParkMe.iOS
 			labelIsOpen.Text = _parking.IsOpen ? "Ja" : "Neen";
 			labelStraatNummer.Text = adresParts [0];
 			labelPostcodeGemeente.Text = adresParts [1];
-			labelContact.Text = _parking.ContactInfo;
+			buttonCallParking.SetTitle(_parking.ContactInfo, UIControlState.Normal);
+			buttonCallParking.TouchUpInside += OnPhoneSelected;
+
 			labelTotaleCapaciteit.Text = _parking.TotalCapacity.ToString();
 
 			ShowCarParkOnMap ();
@@ -80,6 +83,22 @@ namespace ParkMe.iOS
 			base.DidReceiveMemoryWarning ();
 			
 			// Release any cached data, images, etc that aren't in use.
+		}
+
+		private void OnPhoneSelected (object sender, EventArgs e)
+		{
+			var url = NSUrl.FromString("tel:" + Uri.EscapeDataString(CleanPhoneNumber(_parking.ContactInfo)));
+
+			if (UIApplication.SharedApplication.CanOpenUrl(url))
+				UIApplication.SharedApplication.OpenUrl(url);
+			else
+				new UIAlertView("Oeps", "Telefoneren niet mogelijk", null, "Ok").Show();
+		}
+
+		private string CleanPhoneNumber(string phoneNumber)
+		{
+			var regex = new Regex ("[^0-9]");
+			return regex.Replace (phoneNumber, "");
 		}
 
 		public override void ViewDidLoad ()

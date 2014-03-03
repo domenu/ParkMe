@@ -13,6 +13,9 @@ namespace ParkMe.iOS
 	partial class ParkingDetailViewController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton buttonCallParking { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton buttonNavigeren { get; set; }
 
 		[Outlet]
@@ -20,9 +23,6 @@ namespace ParkMe.iOS
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel labelBeschikbareCapaciteit { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UILabel labelContact { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel labelIsOpen { get; set; }
@@ -41,9 +41,14 @@ namespace ParkMe.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (mapView != null) {
-				mapView.Dispose ();
-				mapView = null;
+			if (buttonCallParking != null) {
+				buttonCallParking.Dispose ();
+				buttonCallParking = null;
+			}
+
+			if (buttonNavigeren != null) {
+				buttonNavigeren.Dispose ();
+				buttonNavigeren = null;
 			}
 
 			if (labelAfstand != null) {
@@ -61,19 +66,14 @@ namespace ParkMe.iOS
 				labelIsOpen = null;
 			}
 
-			if (labelStraatNummer != null) {
-				labelStraatNummer.Dispose ();
-				labelStraatNummer = null;
-			}
-
 			if (labelPostcodeGemeente != null) {
 				labelPostcodeGemeente.Dispose ();
 				labelPostcodeGemeente = null;
 			}
 
-			if (labelContact != null) {
-				labelContact.Dispose ();
-				labelContact = null;
+			if (labelStraatNummer != null) {
+				labelStraatNummer.Dispose ();
+				labelStraatNummer = null;
 			}
 
 			if (labelTotaleCapaciteit != null) {
@@ -81,9 +81,9 @@ namespace ParkMe.iOS
 				labelTotaleCapaciteit = null;
 			}
 
-			if (buttonNavigeren != null) {
-				buttonNavigeren.Dispose ();
-				buttonNavigeren = null;
+			if (mapView != null) {
+				mapView.Dispose ();
+				mapView = null;
 			}
 		}
 	}

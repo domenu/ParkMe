@@ -1,30 +1,21 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ParkMe.iOS/BusinessObjects/Parking.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ParkMe.iOS/RootViewController.cs">
     <Files>
       <File FileName="ParkMe.iOS/Managers/ParkingManager.cs" Line="1" Column="1" />
-      <File FileName="ParkMe.iOS/RootViewController.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/RootViewController.cs" Line="51" Column="4" />
       <File FileName="ParkMe.iOS/ParkingDataSource.cs" Line="1" Column="1" />
-      <File FileName="ParkMe.iOS/BusinessObjects/Parking.cs" Line="15" Column="47" />
+      <File FileName="ParkMe.iOS/BusinessObjects/Parking.cs" Line="1" Column="1" />
       <File FileName="ParkMe.iOS/ParkingDetailViewController.cs" Line="1" Column="1" />
       <File FileName="ParkMe.iOS/ParkingDetailViewController.designer.cs" Line="1" Column="1" />
       <File FileName="ParkMe.iOS/MapAnnotation.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/LoadingOverlay.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/Extensions/UIColorExtensions.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/BusinessObjects/LocationUpdatedEventArgs.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/Managers/LocationManager.cs" Line="1" Column="1" />
+      <File FileName="ParkMe.iOS/BusinessObjects/ParkingPartial.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="ParkMe.iOS" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="ComponentReferenceFolder" expanded="True" />
-            <Node name="BusinessObjects" expanded="True">
-              <Node name="Parking.cs" selected="True" />
-            </Node>
-            <Node name="Managers" expanded="True" />
-            <Node name="ParkingDetailViewController.cs" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
