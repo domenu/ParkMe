@@ -123,6 +123,7 @@
     <Compile Include="BusinessObjects\Parking.cs" />
     <Compile Include="Managers\ParkingManager.cs" />
     <Compile Include="LoadingOverlay.cs" />
+    <Compile Include="Extensions\UIColorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="RootViewController.xib" />
@@ -132,6 +133,7 @@
   <ItemGroup>
     <Folder Include="Managers\" />
     <Folder Include="BusinessObjects\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="restsharp">

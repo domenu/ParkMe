@@ -33,7 +33,7 @@ namespace ParkMe.iOS
 
 			Title = _parking.Description;
 			labelBeschikbareCapaciteit.Text = _parking.AvailableCapacity;
-			//labelBeschikbareCapaciteit.BackgroundColor = new UIColor		// TODO
+			labelBeschikbareCapaciteit.BackgroundColor = UIColor.Clear.FromHexString (_parking.SuggestedRGB);
 			labelAfstand.Text = "10";										// TODO
 			labelIsOpen.Text = _parking.IsOpen ? "Ja" : "Neen";
 			labelStraatNummer.Text = adresParts [0];
